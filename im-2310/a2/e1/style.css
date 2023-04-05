@@ -151,7 +151,7 @@ html, body {
   justify-content: center;
   text-align: center;}
 
-.Bottom { grid-area: 14 / 1 / 15 / 9; 
+.bottom { grid-area: 14 / 1 / 15 / 9; 
   z-index: -1;
   border: var(--border01);
   background-color: var(--col01)}
