@@ -152,8 +152,8 @@ html, body {
   text-align: center;}
 
 .bottom { grid-area: 14 / 1 / 15 / 9; 
-  z-index: -1;
   border: var(--border01);
+  z-index: -1;
   background-color: var(--col01)}
 
 .extra-1 { grid-area: 5 / 1 / 11 / 5; 
