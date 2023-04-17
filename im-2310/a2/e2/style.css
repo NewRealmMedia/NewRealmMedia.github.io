@@ -1,0 +1,190 @@
+/* ROOT 
+
+The colour scheme utilises green, fitting with the 'fresh' ideology of most kitchens. The title is burnt orange to provide interest and balance, whilst the most
+important texts are in a pale yellow tone, allowing users to quickly asertain necessary information. The root provides quick alterations, if the client would prefer
+a different color scheme
+
+*/
+
+:root{
+  --col-01:#112619; /*Background*/
+  --col-02:#23402A; /*(img)Container background*/
+  --col-025:#23402a71; /*Recipe name box*/
+  --col-03:#8a8f7d; /*Recipe box Text*/
+  --col-04:#D9C771; /*Recipe Name / author */
+  --col-05:#EFF299; /*Filter Section*/
+  --col-06:#e1ebcc; /*Recipe Box text hover*/
+  --col-07:#f58555cb; /*Head Title*/
+  --border: 1px solid var(--col-02);
+}
+
+/* FONTS 
+
+Poppins is often seen in culinary webdesign. It is easy to read and comes across as professional and clean. For the title I went with a modern font, as one
+would see in a fine restaurant or cafe. 
+
+
+*/
+
+@font-face {
+  font-family: 'poppins';
+  src: url(Fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'poiret';
+  src: url(Fonts/PoiretOne-Regular.ttf)
+  } 
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+/* LINKS
+
+I opted to alter the links into the titles of each recipe. I felt this uncluttered the website and made it far more acessibile. Whilst one is cooking, they may
+prefer to simply click  a link as opposed to copying an entire website.
+
+*/
+
+a {
+  text-decoration: none;
+  color: var(--col-05);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--col-04);
+}
+
+/* H / P 
+
+*/
+
+h1 {
+  font-size: 7rem;
+  font-family: 'poiret';
+  color: var(--col-07);
+  width: 100vw;
+  text-align: center;
+}
+
+
+p {
+  padding-left: 20px;
+}
+
+/* BODY / RECIPE BOXES 
+
+I wanted to make the website give a form of feedback, letting the user know what they're focussing on. I felt that this increased the experience 
+of immersion whilst using the website. 
+
+*/
+
+
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--col-01);
+ 
+}
+
+.RecipeBox{
+  position: relative;
+  width: 1000px;
+  height: 540px;
+  border: var(--border);
+  font-family: 'poppins';
+  box-sizing: border-box;
+  padding: 10px;
+  margin: auto;
+  color: var(--col-03);
+}
+
+.RecipeBox:hover{
+  color: var(--col-06);
+}
+
+/* FILTER 
+
+The filter I preferred to keep standard. The most important requirement for me whilst looking at the filter was functionality. I preferred to keep it separate and
+easily acessible to all users. For this, I opted for a simple white button with a red highlight affordance to let users know what has been selected. 
+
+*/
+
+.FilterSection{
+  color: var(--col-05);
+  padding: 1vw;
+  font-family: 'poppins';
+  font-size: 1.1rem;
+}
+
+.SelectedFilter{
+  color: red;
+}
+
+/* NAME / AUTHOR / ATTR 
+
+The name of each recipe is easily the most important part. For this I made sure the information hierarchy remained consistent with the pale yellow color scheme
+and text size to distinguish the title from other information. 
+
+The author, whilst still important, came second to the title. As such, it recieved a dot point, smaller text and the same pale yellow color scheme. This shows
+the connection to the recipe, while not detracting from the title. 
+
+The attribution is a necessary part of all image sources, however should not be too noticable as it may distract the viewer and clutter the image of the recipe. 
+For this, I opted for a small font size on a transparent background so that the user may not see it unless they choose to. 
+*/
+
+.RecipeName{
+  font-size: 2rem;
+  font-family: 'poppins';
+  color: var(--col-04);
+  background: var(--col-025);
+}
+
+.Author{
+  font-size: 0.9rem;
+  font-family: 'poppins';
+  color:var(--col-04);
+  padding-bottom: 60px;
+  padding-left: 50px;
+}
+
+.Attribution{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #03030379;
+  font-size: 0.5rem;
+  color: var(--col-03);
+}
+
+/* IMGS
+
+The images are what really bring the recipe cards alive. I chose to crop each image to create cohesion and unison. I also choose to make all images slightly
+transparent, so that they are seen as equally important to the user as the accompanying text. Ultimately, this provides a user with the end result, 
+without overshadowing the function of the website as a whole.
+
+*/
+
+.RecipeImageContainer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: -1;
+  background-color: var(--col-02);
+}
+
+.RecipeImg {
+  max-width: 800px;
+  max-height: 540px;
+  opacity: 0.8;
+}
