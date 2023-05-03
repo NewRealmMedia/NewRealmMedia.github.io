@@ -1,0 +1,258 @@
+/*
+  This one CSS file is imported into both index.html AND hosono.html so you need to be careful that it 
+  works for both.
+*/
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+:root{
+  /* first two colours come from Kuroi's Manga Pallete Palette */
+  /* https://lospec.com/palette-list/manga-pallete */
+  --col-01:#171219;
+  --col-02:#f2fbeb;
+  --col-03:#5252ff;
+  --col-04:#b6e878;
+  font-size: 16px;
+  /* scroll behaviour makes the <a> links to ids scroll to position over time rather than immediately */
+  scroll-behavior: smooth;
+}
+
+/* 
+
+In the body section I have applied a 1s ease animation to the background, to apply when switching from lightmode to darkmode. This allows users to adjust to
+the sudden change in background colour without it appearing abrupt.
+
+*/
+
+body{
+  padding: 1rem;
+  background-color: var(--col-02);
+  color: var(--col-01);
+  transition: background-color 1s ease;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav li{
+  font-size: 1rem;
+}
+
+section{
+  margin-bottom: 2rem;
+}
+
+h1{
+  font-size: 3rem;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+a {
+  color: var(--col-03);
+}
+
+p{
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+figcaption{
+  width: fit-content;
+}
+
+dl ul{
+  margin-bottom: 0;
+}
+
+li{
+  font-size: 1rem;
+}
+
+/* By applying the :hover selector to the 'li a' element, the appearance of the cursor can be changed, as the user hovers over the listed items.
+
+When the user hovers over a link inside a list item, the CSS rules change the cursor to a clickable one, 
+and the background and font colors of the list item are modified to give the user feedback about which link they are hovering over. 
+This helps the user understand that the links are interactive and clickable. */
+
+li a:hover {
+  background-color: var(--col-01);
+  color: var(--col-03);
+  cursor: pointer;
+  }
+
+dd{
+  padding-left: 60px;
+}
+
+li ul{
+  padding-left: 40px;
+}
+
+.img-wrapper{
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.img-figure{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-img{
+  width: 80%;
+}
+
+.res-columns{
+  column-width: 25rem;
+}
+
+/* 
+
+For the mode button, I tried to make it as functional and unintrusive as possible. I made the button an eclipse, which displayed the previewed colour
+on hover, indicating a preview of the button function. I Felt this provided an aesthetically pleasing and functional way to 
+give users the option of changing the mode. As can be seen in my javascript comments, the button also gains transparency as the user scrolls down the page.
+
+*/
+
+#mode-button{
+  float: right;
+  position: sticky;
+  top: 1rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+#mode-button:hover {
+  background-color: var(--col-01);
+  color: var(--col-02);
+}
+
+/* 
+
+I used the :active pseudo class to slightly scale the button on click, providing visual feedback to the user that they have clicked correctly. 
+
+*/
+
+
+#mode-button:active {
+  transform: scale(0.9);
+}
+
+
+/* code for loading page */
+
+#load-body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* The #load-link hover & active sets up the styling of the button that will eventually lead to the main page. The styling changes when the user hovers or clicks on the button. 
+This feedback provides users with a visual cue indicating that they can interact with the button, which will help improve the user experience. */
+
+
+
+#load-link {
+  line-height: 1rem;
+  background-color: transparent;
+  border: 0;
+  text-decoration: none;
+  color: var(--col-01);
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid var(--col-01);
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+#load-link:hover {
+  background-color: var(--col-01);
+  color: var(--col-02);
+  cursor: pointer;
+}
+
+#load-link:active {
+  transform: translateY(2px);
+  border-color: var(--col-03);
+}
+
+
+/* the #load-throbber section sets up the styling of the throbber animation that appears while the page is fake loading. 
+This feedback communicates to users that the page is loading and to be patient, which can help reduce user frustration and improve the user experience. */
+
+
+#load-throbber {
+  background-color: var(--col-02);
+  display: none;
+}
+
+#load-throbber:after {
+  content: '';
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin: 0.25rem;
+  border: 0.50rem solid var(--col-01);
+  border-color: var(--col-01) transparent var(--col-01) transparent;
+  animation: load-throbber 0.8s linear infinite;
+}
+
+@keyframes load-throbber {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Media Queries */
+
+/* medium devices 600 - 992 */
+@media only screen and (min-width: 600px) {
+  :root{
+    font-size: 20px;
+  }
+  
+  .img-wrapper{
+    width: 75%;
+    margin: 1.5rem auto;
+  }
+
+}
+
+/* medium devices 992 + */
+@media only screen and (min-width: 992px) {
+  :root{
+    font-size: 24px;
+  }
+
+  .img-wrapper{
+    max-width: fit-content;
+    float: right;
+    margin: 1.5rem;
+  }
+
+}
+
+@media (prefers-reduced-motion) {
+  :root{
+    scroll-behavior: auto;
+  }
+}
