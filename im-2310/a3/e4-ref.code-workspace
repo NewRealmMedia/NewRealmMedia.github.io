@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../e4-ref"
+		},
+		{
+			"path": "../e4-ref copy"
+		},
+		{
+			"path": "../a3"
+		},
+		{
+			"path": "../../../../Downloads/drag-ref"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "a3"
+	}
+}

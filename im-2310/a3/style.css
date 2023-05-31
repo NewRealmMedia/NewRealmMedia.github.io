@@ -1,0 +1,206 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('./Fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
+  /* Add other font formats if available */
+  /* Specify the font-weight and font-style if needed */
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, minmax(0, 1fr)); /* Adjust the number of rows as needed */
+  grid-gap: 10px; /* Adjust the grid gap as desired */
+  height: 100%;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 5 / 2; /* Adjust the grid area as needed */
+  border: 1px solid black;
+}
+
+.div2 {
+  grid-area: 2 / 2 / 4 / 3;
+  border: 1px solid black;
+  position: relative; /* Added */
+}
+
+.magnet {
+  font-family: 'EB Garamond', serif;
+  font-size: 2rem;
+  border-top-width: 1px;
+  border-left-width: 1px;
+  border-bottom-width: 4px;
+  border-right-width: 4px;
+  border-style: solid;
+  display: block;
+  margin: 30px auto;
+  position: absolute; /* Added */
+  cursor: move;
+  left: 0;
+  top: 0;
+  background-color: rgb(253, 253, 253);
+  padding-left: 10%;
+  padding-right: 10%;
+  /* Add other styling properties as desired */
+}
+
+.magnet.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.rotate-arrow {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  opacity: 0; /* Hidden by default */
+}
+
+.rotate-arrow.right {
+  top: -40px; /* Adjust the distance above the word */
+  right: 10px;
+  /* Add arrow image as background */
+  background-image: url('Arrows/right_arrow.png');
+  background-size: cover;
+  transform: rotate(15deg); /* Rotate clockwise */
+}
+
+.rotate-arrow.left {
+  top: -40px;
+  left: 10px;
+  /* Add arrow image as background */
+  background-image: url('arrows/left_arrow.png');
+  background-size: cover;
+  transform: rotate(-15deg); /* Rotate counter-clockwise */
+}
+
+.magnet:hover + .rotate-arrow,
+.magnet.rotate-active + .rotate-arrow {
+  opacity: 1; /* Show on magnet hover or rotation active */
+}
+
+.rotate-arrow::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.top-left::before {
+  border-top-left-radius: 50%;
+}
+
+.top-right::before {
+  border-top-right-radius: 50%;
+}
+
+.rotate-arrow.clockwise {
+  animation: rotateClockwise 1s linear infinite;
+}
+
+.rotate-arrow.counterclockwise {
+  animation: rotateCounterclockwise 1s linear infinite;
+}
+
+@keyframes rotateClockwise {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rotateCounterclockwise {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+.div3 {
+  grid-area: 1 / 3 / 5 / 5; /* Adjust the grid area as needed */
+  border: 1px solid black;
+  display: flex; /* Added */
+  justify-content: center; /* Added */
+  align-items: center; /* Added */
+}
+
+.div4 {
+  grid-area: 1 / 5 / 3 / 5;
+  border: 1px solid black;
+}
+
+.img-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fridge-image img {
+  max-width: 100%; /* Adjust the maximum width as needed */
+  max-height: 100%; /* Adjust the maximum height as needed */
+}
+
+.leaderboard-image img {
+  max-width: 100%; /* Adjust the maximum width as needed */
+  max-height: 100%; /* Adjust the maximum height as needed */
+}
+
+.magnet.rotate-active {
+  --rotation-angle: 0deg;
+  transform: translate(-50%, -50%) rotate(var(--rotation-angle));
+  transform-origin: center center;
+}
+
+
+.rotate-handle {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.magnet:hover .rotate-handle,
+.rotate-active .rotate-handle {
+  opacity: 1;
+}
+
+.magnet.selected {
+  background-color: yellow; /* Change the background color as desired */
+}
