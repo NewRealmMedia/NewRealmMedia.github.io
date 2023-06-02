@@ -8,17 +8,31 @@
 </head>
 <body>
   <div class="parent">
-    <div class="div1"></div>
+    <div class="div1">
+      <dialog id="modalDialog">
+        <button id="closeModal">&times;</button>
+        <h2>The Internets Refrigerator</h2>
+        <p>"The Internet's Refrigerator" is a prototype webpage that ingeniously combines the elements of agency and playfulness, offering users a captivating and interactive experience. With a randomly generated pile of fridge magnets, users can effortlessly drag and rotate the magnets to create new words and phrases, thereby unleashing their creative potential and fostering a profound sense of playful agency. This delightful interaction provides users with the freedom to explore and experiment, resulting in the creation of novel and unpredictable expressions.</p>
+        <p>The meaningful interactions offered by the webpage further amplify the sense of playful agency. Smooth dragging of magnets allows for seamless movement, enabling users to position them precisely where they desire. The magnets are intelligently restricted to specific areas, creating a sense of order and structure and focusing the creative interaction. Feedback on hover over magnets provides visual cues, heightening the interactivity and ensuring an intuitive user experience.</p>
+        <p>In addition to dragging, the rotation feature adds another layer of engagement and playfulness. Users can smoothly rotate the words, facilitated by a transparent rotation handle that appears when hovering over a magnet. This intuitive functionality, coupled with cursor feedback, empowers users to manipulate the words and phrases, encouraging them to explore different orientations and arrangements to achieve their desired effect.</p>
+        <p>The webpage's design aesthetic is carefully crafted to complement the concept of playful agency. Drawing inspiration from the nostalgic appeal of 1960s-styled refrigerators, the webpage evokes a sense of charm and whimsy. The clean and monochromatic design enhances the overall user experience, ensuring that the focus remains on the playful interactions and creative expression facilitated by the magnets. This aesthetic choice creates a visual environment that is both visually appealing and conceptually aligned with the notion of playfulness and agency.</p>
+        <p>The project initially took shape as a crowd-sourced word cloud, which dynamically transforms the webpage as users contribute to it. However, this model proved to be convoluted and required excessive explanation for a relatively simple concept. To address this, I explored descriptions of mental models by Murray, J, seeking clarity on conveying a mental representation that effectively encompasses both playful agency and a crowd-built word cloud. This exploration ultimately led me to the concept of fridge magnets, which effortlessly conveys nostalgia and offers instant comprehension.</p>
+        <p id="lowerp">As a prototype, the website currently lacks features that would significantly amplify the user’s sense of agency. To further foster a sense of shared creativity, users will be provided a new set of magnets every 24 hours. When a word is appended to the fridge, it becomes visible to all visitors and remains placed for 24 hours, unless it is “voted up” by another user. This mechanism extends its duration, encouraging users to build upon another’s contributions and facilitating the creation of phases collaboratively with strangers on the internet. Further iterations include use of the leaderboard with a highlighting mechanism to submit phrases for “upvoting”. Further, it may incorporate daily necessities such as news and weather updates, offering users a refreshing starting point for their daily internet browsing.</p> 
+        <h3>Enjoy!</h3>
+      </dialog>
+      <button id="showModal">Description</button>
+    </div>
     <div class="div2" id="magnet-container">
       <!-- Magnet elements will be dynamically added here -->
     </div>
-    <div class="div3">
-      <div class="img-container fridge-image" id="fridge">
+    <div class="div3" id="fridge">
+      <div class="img-container fridge-image">
         <img src="Fridge.png" alt="Fridge">
       </div>
     </div>
     <div class="div4">
       <div class="img-container leaderboard-image">
+        <div class="selected-text">This is a test of how words will be displayed in the leaderboard image</div>
         <img class="img" src="Leaderboard.png" alt="Leaderboard">
       </div>
     </div>

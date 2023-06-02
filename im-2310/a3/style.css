@@ -1,3 +1,4 @@
+/* GGlobal styles: Sets the height, margin, and padding of the HTML and body elements. */
 html,
 body {
   height: 100%;
@@ -5,31 +6,127 @@ body {
   padding: 0;
 }
 
+/* Font face defines a custom font face named 'EB Garamond' and specifies the font file path. */
 @font-face {
   font-family: 'EB Garamond';
   src: url('./Fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
-  /* Add other font formats if available */
-  /* Specify the font-weight and font-style if needed */
 }
 
 .parent {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, minmax(0, 1fr)); /* Adjust the number of rows as needed */
-  grid-gap: 10px; /* Adjust the grid gap as desired */
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  grid-gap: 10px;
   height: 100%;
 }
 
+/* Styles for the modal: Defines the styling for a modal button, including its width, height, borders, background color, font family, and transitions on hover and active states. */
+
+#showModal {
+  width: 80%;
+  min-height: 75px;
+  border: none;
+  outline: none;
+  background-color: rgb(240, 239, 239);
+  border-top: 1px solid #000000;
+  border-left: 1px solid #000000;
+  border-bottom: 6px solid #000000;
+  border-right: 6px solid #000000;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.75vw;
+  transition: background-color 0.2s;
+}
+
+#showModal:hover {
+  background: #dadada;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#showModal:active {
+  background-color: #959595;
+  border-top: 5px solid #000000;
+  border-left: 5px solid #000000;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+}
+
+/*Styles for the modal dialog defines the styling for the modal dialog, including its position, 
+background color, padding, border radius, box shadow, width, height, maximum width, display, and z-index.*/
+
+#modalDialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.493);
+  width: 75%;
+  height: 90%;
+  max-width: 90%;
+  display: none;
+  z-index: 999;
+}
+
+/*Styles for modal dialog content defines the styling for paragraphs and headings inside the modal dialog, including font family, font size, and text alignment.*/
+
+#modalDialog p {
+  font-family: 'EB Garamond', serif;
+  font-weight: lighter;
+  font-size: 1.2vw;
+  text-align: center;
+}
+
+#modalDialog h2 {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.5vw;
+  text-align: center;
+}
+
+#modalDialog h3 {
+  font-family: 'EB Garamond', serif;
+  font-size: 3vw;
+  text-align: center;
+  margin-top: 0px;
+}
+
+/*Close button for the modal defines the styling for the close button of the modal, including its position, size, font size, cursor, background, border, outline, and transition on hover.*/
+
+#closeModal {
+  position: absolute;
+  top: 1px;
+  right: 30px;
+  font-size: 5vw;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: transform 0.3s ease;
+}
+
+#closeModal:hover {
+  transform: scale(1.3);
+}
+
 .div1 {
-  grid-area: 1 / 1 / 5 / 2; /* Adjust the grid area as needed */
-  border: 1px solid black;
+  grid-area: 1 / 1 / 5 / 2;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  padding-top: 30px;
+  overflow: hidden;
 }
 
 .div2 {
   grid-area: 2 / 2 / 4 / 3;
-  border: 1px solid black;
-  position: relative; /* Added */
+  border: 2px solid black;
+  position: relative;
 }
+
+/*Styles for magnet defines the styling for elements for the fridge magnets*/
 
 .magnet {
   font-family: 'EB Garamond', serif;
@@ -41,117 +138,77 @@ body {
   border-style: solid;
   display: block;
   margin: 30px auto;
-  position: absolute; /* Added */
+  position: absolute;
   cursor: move;
   left: 0;
   top: 0;
   background-color: rgb(253, 253, 253);
   padding-left: 10%;
   padding-right: 10%;
-  /* Add other styling properties as desired */
 }
 
-.magnet.prevent-select {
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
-}
-
-.rotate-arrow {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-  opacity: 0; /* Hidden by default */
-}
-
-.rotate-arrow.right {
-  top: -40px; /* Adjust the distance above the word */
-  right: 10px;
-  /* Add arrow image as background */
-  background-image: url('Arrows/right_arrow.png');
-  background-size: cover;
-  transform: rotate(15deg); /* Rotate clockwise */
-}
-
-.rotate-arrow.left {
-  top: -40px;
-  left: 10px;
-  /* Add arrow image as background */
-  background-image: url('arrows/left_arrow.png');
-  background-size: cover;
-  transform: rotate(-15deg); /* Rotate counter-clockwise */
-}
-
-.magnet:hover + .rotate-arrow,
-.magnet.rotate-active + .rotate-arrow {
-  opacity: 1; /* Show on magnet hover or rotation active */
-}
-
-.rotate-arrow::before {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background-color: #000000;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.top-left::before {
-  border-top-left-radius: 50%;
-}
-
-.top-right::before {
-  border-top-right-radius: 50%;
-}
-
-.rotate-arrow.clockwise {
-  animation: rotateClockwise 1s linear infinite;
-}
-
-.rotate-arrow.counterclockwise {
-  animation: rotateCounterclockwise 1s linear infinite;
-}
-
-@keyframes rotateClockwise {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
-@keyframes rotateCounterclockwise {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(-360deg);
-  }
+.magnet:hover {
+  transform: scale(1.08);
+  transition: transform 0.3s ease;
 }
 
 .div3 {
-  grid-area: 1 / 3 / 5 / 5; /* Adjust the grid area as needed */
-  border: 1px solid black;
-  display: flex; /* Added */
-  justify-content: center; /* Added */
-  align-items: center; /* Added */
+  grid-area: 1 / 3 / 5 / 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .div4 {
   grid-area: 1 / 5 / 3 / 5;
-  border: 1px solid black;
+  padding-right: 10px;
 }
+
+.leaderboard-image {
+  position: relative;
+}
+
+/* Experimentation for selection output */
+.leaderboard-image .selected-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.25vw;
+  width: 300px;
+  height: 100px;
+  text-align: center;
+}
+
+.selected-words {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Scaling for smaller viewport sizes */
+@media (max-width: 600px) {
+  .leaderboard-image .selected-text {
+    width: 80%;
+    max-width: 250px;
+    height: 60px;
+    max-height: 100px;
+  }
+}
+
+@media (max-width: 400px) {
+  .leaderboard-image .selected-text {
+    width: 60%;
+    max-width: 250px;
+    height: 40px;
+    max-height: 100px;
+  }
+}
+
+/*image scaling and properties*/
 
 .img-container {
   width: 100%;
@@ -162,21 +219,16 @@ body {
 }
 
 .fridge-image img {
-  max-width: 100%; /* Adjust the maximum width as needed */
-  max-height: 100%; /* Adjust the maximum height as needed */
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .leaderboard-image img {
-  max-width: 100%; /* Adjust the maximum width as needed */
-  max-height: 100%; /* Adjust the maximum height as needed */
+  max-width: 100%;
+  max-height: 100%;
 }
 
-.magnet.rotate-active {
-  --rotation-angle: 0deg;
-  transform: translate(-50%, -50%) rotate(var(--rotation-angle));
-  transform-origin: center center;
-}
-
+/*rotation handle properties*/
 
 .rotate-handle {
   position: absolute;
@@ -201,6 +253,11 @@ body {
   opacity: 1;
 }
 
+/* Experimentation for selection function */
 .magnet.selected {
-  background-color: yellow; /* Change the background color as desired */
+  background-color: yellow;
+}
+
+#lowerp{
+margin-bottom: 0%;
 }
