@@ -1,6 +1,179 @@
+
+
+:root{
+  --col-01:#e7ac22;; /*Yellow Text*/
+  --col-02:#23402A; /*(img)Container background*/
+  --col-025:#23402a71; /*Recipe name box*/
+  --col-03:#8a8f7d; /*Recipe box Text*/
+  --col-04:#D9C771; /*Recipe Name / author */
+  --col-05:#EFF299; /*Filter Section*/
+  --col-06:#e1ebcc; /*Recipe Box text hover*/
+  --col-07:#f58555cb; /*Head Title*/
+  --border: 1px solid var(--col-02);
+}
+
+html,
 body {
   background-color: #55514D;
+  height: 100%;
 }
+
+.container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 3fr 30fr 1fr 2.3fr 1fr 1fr 2.3fr 3fr 10fr 2fr 7.5fr 3fr 7.5fr 1fr 1fr 7.5fr 1fr 3.75fr 1fr 3.75fr 3fr 7.5fr 1fr 1fr 3fr 1fr 5fr 1fr 2.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  width: 100%;
+  height: 100%;
+  border: 8px;
+  background-color: #ffffff;
+}
+
+.Fridge { grid-area: 2 / 1 / 3 / 6; 
+  justify-content: center;
+  width: 100%;
+  height: 500px;
+  background-color: rgb(255, 255, 255);
+}
+
+@media (min-width: 1200px) {
+  .Fridge {
+    grid-area: 2 / 2 / 3 / 5; 
+    width: 100%;
+    height: 1000px;
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+.RMITFridge { grid-area: 4 / 1 / 5 / 3; 
+  max-height: 20px;
+  max-width: 20px;
+}
+
+#RMITFridgeImg{
+  max-height: 20px;
+  max-width: 20px;
+}
+
+
+.HTML-\/-CSS {
+  justify-self: end;
+  grid-area: 5 / 2 / 6 / 3;
+}
+
+.Playful-Agency { grid-area: 4 / 4 / 7 / 6; }
+
+.Aerolithus {
+  grid-area: 9 / 1 / 10 / 4;
+  width: 83.3%;
+}
+
+.AerolithusTitle {
+  justify-self: center;
+  grid-area: 9 / 3 / 10 / 5;
+  height: 25%;
+}
+
+.AeroDescription {
+  align-self: end;
+  grid-area: 9 / 4 / 10 / 6;
+  height: 62.5%;
+}
+
+.AeroAngles { grid-area: 11 / 3 / 12 / 6; }
+
+.RMITAero {
+  grid-area: 11 / 2 / 12 / 3;
+  height: 20%;
+}
+
+.MAYA {
+  align-self: start;
+  grid-area: 11 / 2 / 12 / 3;
+  height: 30%;
+}
+
+.SOTH {
+  justify-self: center;
+  grid-area: 13 / 1 / 14 / 4;
+  width: 66.6%;
+}
+
+.SOTHTitle {
+  align-self: end;
+  grid-area: 13 / 3 / 14 / 4;
+  height: 10%;
+}
+
+.Illustrator {
+  justify-self: center;
+  align-self: center;
+  grid-area: 13 / 4 / 14 / 6;
+  width: 50%;
+  height: 50%;
+}
+
+.FLOX {
+  justify-self: center;
+  align-self: stretch;
+  grid-area: 16 / 3 / 17 / 6;
+  width: 66.6%;
+}
+
+.FLOXTitle {
+  align-self: end;
+  grid-area: 16 / 3 / 17 / 4;
+  height: 10%;
+}
+
+.Redheads {
+  justify-self: center;
+  grid-area: 18 / 1 / 19 / 6;
+  width: 90%;
+}
+
+.Icons {
+  justify-self: center;
+  grid-area: 20 / 1 / 21 / 6;
+  width: 90%;
+}
+
+.GrowthVid {
+  justify-self: center;
+  grid-area: 22 / 3 / 23 / 6;
+  width: 80%;
+}
+
+.GrowthDescrip { grid-area: 22 / 1 / 23 / 2; }
+
+.RMITGrowth {
+  justify-self: center;
+  grid-area: 23 / 4 / 24 / 6;
+  width: 70%;
+}
+
+.Unity {
+  grid-area: 24 / 5 / 25 / 6;
+  width: 70%;
+}
+
+.Download { grid-area: 24 / 3 / 25 / 4; }
+
+.ComingSoon { grid-area: 27 / 2 / 28 / 5; }
+
+.SEQ-RURAL {
+  justify-self: start;
+  grid-area: 29 / 2 / 30 / 4;
+  width: 75%;
+}
+
+.NewsScraper {
+  justify-self: end;
+  grid-area: 29 / 3 / 30 / 5;
+  width: 75%;
+}
+
+.FridgeDescription { grid-area: 7 / 3 / 8 / 4; }
 
 #SVG {
   width: 100%;
@@ -11,31 +184,3 @@ body {
   filter: brightness(120%); /* Adjust the glow effect as desired */
 }
 
-.custom-cursor {
-  position: fixed;
-  opacity: 0;
-  pointer-events: none;
-  mix-blend-mode: difference;
-  width: 1px;
-  height: 1px;
-  border-radius: 50%;
-  background-color: white;
-  transition: transform 350ms ease;
-  transform: translate(-50%, -50%) scale(.3);
-  z-index: 1000;
-}
-.custom-cursor:before{
-  content:"";
-  mix-blend-mode:difference;
-  margin:auto;
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  width:100%;
-  height:100%;
-    box-shadow:0 0 20px 40px rgba(255,255,255,1);
-  border-radius: 50%;
-  filter:blur(5px);
-}
