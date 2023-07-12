@@ -128,12 +128,9 @@ background color, padding, border radius, box shadow, width, height, maximum wid
 
 @media (max-width: 600px) {
   .div2 {
-    top: 45px;
-    left: 20px;
-    grid-area: 1 / 1 / 4 / 3;
-    width: 50%;
-    height: 20%;
+    grid-area: 4 / 5 / 5 / 2;
     border: 2px solid black;
+    justify-content: end;
   }
 }
 
@@ -185,8 +182,7 @@ background color, padding, border radius, box shadow, width, height, maximum wid
 
 @media (max-width: 600px) {
   .div3 {
-    grid-area: 1 / 2 / 5 / 5;
-    padding-left: 10%;
+    grid-area: 1 / 1 / 5 / 6;
   }
 }
 
