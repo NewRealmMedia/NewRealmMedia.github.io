@@ -39,48 +39,58 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  /* createRandomMagnetPile function is responsible for generating a random set of magnets.
-     It creates HTML elements for each magnet word, sets their initial positions randomly within a specified range,
-     and attaches event listeners for mouse interactions. */
   function createRandomMagnetPile() {
     const magnetContainer = document.getElementById('magnet-container');
     const div2Rect = magnetContainer.getBoundingClientRect();
-    const maxRandomX = div2Rect.width - 200; 
-    const maxRandomY = div2Rect.height - 100; 
-
+    let maxRandomX;
+    let maxRandomY;
+  
+    if (window.innerWidth < 600) {
+      maxRandomX = div2Rect.width - 80;
+      maxRandomY = div2Rect.height - 40;
+    } else {
+      maxRandomX = div2Rect.width - 200;
+      maxRandomY = div2Rect.height - 100;
+    }
+  
     magnetWords.forEach((word) => {
       const magnetElement = document.createElement('div');
       magnetElement.classList.add('magnet');
       magnetElement.textContent = word;
-
+  
       const randomX = Math.random() * maxRandomX;
       const randomY = Math.random() * maxRandomY;
-      magnetElement.style.left = `${randomX}px`;
-      magnetElement.style.top = `${randomY}px`;
-
+  
+      if (window.innerWidth < 600) {
+        magnetElement.style.left = `${randomX}px`;
+        magnetElement.style.top = `${randomY - 30}px`;
+      } else {
+        magnetElement.style.left = `${randomX}px`;
+        magnetElement.style.top = `${randomY}px`;
+      }
+  
       const rotateHandle = document.createElement('div');
       rotateHandle.classList.add('rotate-handle');
       rotateHandle.innerHTML = '&#8634;';
       magnetElement.appendChild(rotateHandle);
-
+  
       rotateHandle.addEventListener('mousedown', function(event) {
         event.stopPropagation();
         handleRotationStart(event, magnetElement);
       });
-
+  
       magnetElement.addEventListener('mousedown', function(event) {
         event.stopPropagation();
         handleMagnetMouseDown(event);
       });
-
+  
       magnetElement.style.userSelect = 'none';
       magnetElement.style.webkitUserSelect = 'none';
-      
-
+  
       magnetContainer.appendChild(magnetElement);
     });
   }
-
+  
   /* handleRotationStart function handles the start of rotation for a magnet element.
      It calculates the initial rotation angle and mouse angle,
      and attaches event listeners for mouse movement and release to handle the rotation. */
