@@ -124,13 +124,14 @@ background color, padding, border radius, box shadow, width, height, maximum wid
   grid-area: 2 / 2 / 4 / 3;
   border: 2px solid black;
   position: relative;
+  height: 100px;
+  padding-top: 50px;
 }
 
 @media (max-width: 600px) {
   .div2 {
-    grid-area: 4 / 5 / 5 / 2;
+    grid-area: 5 / 5 / 9 / 2;
     border: 2px solid black;
-    justify-content: end;
   }
 }
 
@@ -178,6 +179,7 @@ background color, padding, border radius, box shadow, width, height, maximum wid
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 50px;
 }
 
 @media (max-width: 600px) {
