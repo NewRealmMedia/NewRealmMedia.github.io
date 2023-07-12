@@ -190,7 +190,7 @@ background color, padding, border radius, box shadow, width, height, maximum wid
 
   @media (max-width: 600px) {
     .div2 {
-      grid-area: 5 / 6 / 9 / 3;
+      grid-area: 5 / 6 / 9 / 2;
       border: 4px solid black;
       height: 100px;
     }
