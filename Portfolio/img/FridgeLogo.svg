@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 379.68 222.59">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        font-size: 65.7px;
+      }
+
+      .cls-3, .cls-5 {
+        font-family: FenwayParkJF, FenwayParkJF;
+      }
+
+      .cls-6 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-7 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4 {
+        font-family: Cubano-Italic, Cubano;
+        font-size: 64.62px;
+        font-style: italic;
+        text-decoration: underline;
+      }
+
+      .cls-5 {
+        font-size: 44.03px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <path d="m189.84,222.59L17.62,123.56c-23.49-23.49-23.49-61.58,0-85.07l84.72-2.25c48.32-48.32,126.67-48.32,175,0l84.72,2.25c23.49,23.49,23.49,61.58,0,85.07l-172.22,99.03Z"/>
+      <path class="cls-1" d="m20.49,119.83c-10.21-10.43-15.83-24.19-15.83-38.8s5.31-27.6,14.98-37.92l84.68-2.25,1.32-1.32c22.49-22.49,52.39-34.88,84.2-34.88s61.71,12.39,84.2,34.88l1.32,1.32,84.68,2.25c20.22,21.58,19.94,55.49-.85,76.72l-169.35,97.38L20.49,119.83Z"/>
+      <text class="cls-5" transform="translate(163.04 48.13)"><tspan class="cls-6" x="0" y="0">T</tspan><tspan x="17.66" y="0">he</tspan></text>
+      <text class="cls-3" transform="translate(149.36 187.06) rotate(-16.45)"><tspan x="0" y="0">Fridge</tspan></text>
+      <text class="cls-4" transform="translate(21.45 99.68)"><tspan x="0" y="0">Intern</tspan><tspan class="cls-7" x="211.68" y="0">e</tspan><tspan x="248.32" y="0">t’s</tspan></text>
+      <path d="m233.82,108.63l6.13-1.86c.25-.15.56.04.54.33l-.17,1.57c-.01.21-.35.3-.56.26l-5.82.37c-.33-.06-.41-.49-.12-.66Z"/>
+      <rect class="cls-2" x="105.06" y="39.35" width="53.83" height="3.04"/>
+      <rect class="cls-2" x="221.57" y="39.35" width="53.84" height="3.04"/>
+    </g>
+  </g>
+</svg>

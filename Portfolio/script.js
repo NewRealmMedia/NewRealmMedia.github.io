@@ -66,7 +66,13 @@ document.addEventListener('DOMContentLoaded', function() {
   projectsElement.addEventListener('click', handleClick);
   projectsElement.style.cursor = 'pointer'; // Add cursor style to indicate it's clickable
 
+    var iframe = document.getElementById('sketchfab-iframe');
+    var isMobile = window.matchMedia("(max-width: 812px)").matches;
 
-});
+    if (isMobile) {
+      iframe.width = '200';
+      iframe.height = '200';
+    }
+  });
 
 

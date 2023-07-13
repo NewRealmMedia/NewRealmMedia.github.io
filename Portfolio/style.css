@@ -1,7 +1,7 @@
 
 
 :root{
-  --col-01:#e7ac22;; /*Yellow Text*/
+  --col-01:#e7ac22; /*Yellow Text*/
   --col-02:#23402A; /*(img)Container background*/
   --col-025:#23402a71; /*Recipe name box*/
   --col-03:#8a8f7d; /*Recipe box Text*/
@@ -14,59 +14,288 @@
 
 html,
 body {
-  background-color: #55514D;
   height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.hero{
+  background-color: #55514D;
 }
 
 .container {  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 3fr 30fr 1fr 2.3fr 1fr 1fr 2.3fr 3fr 10fr 2fr 7.5fr 3fr 7.5fr 1fr 1fr 7.5fr 1fr 3.75fr 1fr 3.75fr 3fr 7.5fr 1fr 1fr 3fr 1fr 5fr 1fr 2.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 3fr 30fr 1fr 2.3fr 1fr 1fr 2.3fr 3fr 10fr 2fr 7.5fr 3fr 7.5fr 1fr 1fr 7.5fr 1fr 3.75fr 1fr 3.75fr 3fr 7.5fr 1fr 1fr 3fr 1fr 5fr 1fr 2.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   width: 100%;
   height: 100%;
   border: 8px;
   background-color: #ffffff;
+  position: relative;
 }
 
-.Fridge { grid-area: 2 / 1 / 3 / 6; 
+
+
+.Pinwheel {
+  grid-area: 1 / 1 / 1 / 7;
+  display: flex;
+  z-index: 1;
+}
+
+#FridgePinwheel {
+  grid-area: 1 / 1 / 1 / 7;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.FridgeLogo {
+  grid-area: 1 / 2 / 2 / 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+#FridgeLogo {
+  grid-area: 1 / 2 / 2 / 5;
+  width: 80%;
+  height: auto;
+  padding-top: 15%;
+  padding-bottom: 15%;
+}
+
+@media (min-width: 812px) {
+  .FridgeLogo {
+    grid-area: 1 / 2 / 2 / 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }}
+
+@media (min-width: 812px) {
+  #FridgeLogo {
+    grid-area: 1 / 2 / 2 / 5;
+    width: 50%;
+    height: auto;
+    padding-top: 15%;
+    padding-bottom: 15%;
+  }
+}
+
+.Fridge {
+  grid-area: 2 / 1 / 3 / 6;
   justify-content: center;
   width: 100%;
   height: 500px;
-  background-color: rgb(255, 255, 255);
+  z-index: 2;
+  position: relative;
+  background-color: #ffffffa8;
+  z-index: 5;
 }
 
 @media (min-width: 1200px) {
   .Fridge {
-    grid-area: 2 / 2 / 3 / 5; 
+    grid-area: 2 / 2 / 3 / 5;
     width: 100%;
-    height: 1000px;
-    background-color: rgb(255, 255, 255);
+    height: 800px;
+    margin-top: 10%;
+    z-index: 5;
   }
 }
 
-.RMITFridge { grid-area: 4 / 1 / 5 / 3; 
-  max-height: 20px;
-  max-width: 20px;
+@media (max-width: 812px) {
+  .Fridge {
+    grid-area: 2 / 1 / 3 / 6;
+    width: 100%;
+    height: 500px;
+    margin-top: 10%;
+  }
 }
 
-#RMITFridgeImg{
-  max-height: 20px;
-  max-width: 20px;
+.FridgeBackground {
+  grid-area: 1 / 1 / 4 / 6;
+  display: flex;
+  position: relative;
+  z-index: 1;
 }
 
+#FridgeBackgroundDesktop {
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  margin-top: 28.59%
+}
+
+#FridgeBackgroundMobile {
+  display: none;
+  width: 100%;
+  height: 1000px;
+  z-index: 1;
+  margin-top: 26.4%;
+}
+
+@media (max-width: 812px) {
+  .FridgeBackground {
+    grid-area: 1 / 1 / 3 / 7;
+  }
+  
+  #FridgeBackgroundDesktop {
+    display: none;
+  }
+  
+  #FridgeBackgroundMobile {
+    display: block;
+  }
+}
+
+.RMITFridge {
+  grid-area: 2 / 1 / 2 / 7;
+  position: relative;
+  z-index: 3; /* Increase the z-index value */
+}
+
+#RMITFridgeImg {
+  width: 25%;
+  height: auto;
+  padding-left: 4%;
+  margin-top: 58%;
+}
+
+@media (max-width: 812px){
+.RMITFridge {
+  grid-area: 3 / 1 / 3 / 7;
+  position: relative;
+  z-index: 3; /* Increase the z-index value */
+}}
+
+@media (max-width: 812px){
+#RMITFridgeImg {
+  width: 20%;
+  height: auto;
+  padding-left: 7%;
+  margin-top: 9%
+}}
 
 .HTML-\/-CSS {
   justify-self: end;
   grid-area: 5 / 2 / 6 / 3;
 }
 
-.Playful-Agency { grid-area: 4 / 4 / 7 / 6; }
-
-.Aerolithus {
-  grid-area: 9 / 1 / 10 / 4;
-  width: 83.3%;
+.Playful-Agency {
+  grid-area: 2 / 3 / 2 / 6;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  z-index: 3;
 }
+
+.Playful-Agency img {
+  width: 70%;
+  height: auto;
+  padding-right: 5%;
+  margin-top: 99%;
+}
+
+@media (max-width: 812px){
+  .Playful-Agency {
+    grid-area: 3 / 3 / 3 / 6;
+    display: flex;
+    justify-content: flex-end;
+    align-items: start;
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: auto;
+  }}
+  
+  @media (max-width: 812px){
+    .Playful-Agency img {
+      padding-right: 20%;
+      padding-left: 30%;
+      padding-top: 0%;
+      margin-top: 15%;
+    }}
+
+
+    .FridgeDescription {
+      grid-area: 3 / 1 / 4 / 6; /* Adjust grid-area values as needed */
+      width: 900px;
+      height: 530px;
+      margin: 0 auto;
+      border-radius: 30px;
+      margin-top: 5%;
+      background-color: #ffffffa8;
+      z-index: 10; /* Increase the z-index value to make it appear on top */
+      box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+      padding-left: 100px; /* Adjust the padding value as desired */
+      padding-right: 100px; /* Adjust the padding value as desired */
+      font-size: 1.8vw;
+      line-height: 2;
+      text-align: center;
+    }
+
+    @media (max-width: 812px){    
+      .FridgeDescription {
+      grid-area: 4 / 1 / 3 / 6;
+      width: 150px;
+      height: 146px;
+      margin: 0 auto;
+      border-radius: 10px;
+      margin-top: 5%;
+      background-color: #ffffffa8;
+      z-index: 10; /* Increase the z-index value to make it appear on top */
+      box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+      padding-left: 10px; /* Adjust the padding value as desired */
+      padding-right: 10px; /* Adjust the padding value as desired */
+      padding-top: 5px;
+      font-size: 1.8vw;
+      line-height: 2;
+      text-align: center;
+      margin-top: 30%;
+      
+
+    }}
+
+.Playful-Agency img {
+  width: 100%;
+  height: auto;
+}
+
+.AeroBackground {
+  grid-area: 5 / 1 / 3 / 8;
+  padding-top: 44.93%;
+}  
+
+@media (max-width: 812px){    
+  .AeroBackground {
+    grid-area: 5 / 1 / 3 / 8;
+    padding-top: 85.8%;
+  }}
+
+  .sketchfab-embed-wrapper {
+    grid-area: 4 / 2 / 5 / 5; /* Adjust the grid-area values as needed */
+    justify-content: center;
+    padding-top: 50%;
+    margin-top: 100%;
+    z-index: 4;
+    border-radius: 10px; /* Adjust the border radius as needed */
+  }
+  
+  @media (max-width: 812px) {
+    .sketchfab-embed-wrapper {
+      grid-area: 4 / 2 / 5 / 4; /* Adjust the grid-area values as needed */
+      justify-content: center;
+      z-index: 4;
+      border-radius: 5px; /* Adjust the border radius as needed */
+      margin-top: 260px;
+    }
+  }
 
 .AerolithusTitle {
   justify-self: center;
@@ -173,7 +402,6 @@ body {
   width: 75%;
 }
 
-.FridgeDescription { grid-area: 7 / 3 / 8 / 4; }
 
 #SVG {
   width: 100%;
