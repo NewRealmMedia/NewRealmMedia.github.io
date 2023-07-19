@@ -73,6 +73,86 @@ document.addEventListener('DOMContentLoaded', function() {
       iframe.width = '200';
       iframe.height = '200';
     }
+    
+    const slideshowContainer = document.querySelector('.slideshow-container');
+    const slides = document.querySelectorAll('.slideshow-content');
+    const prevArrow = document.querySelector('.arrow-prev');
+    const nextArrow = document.querySelector('.arrow-next');
+  
+    let currentIndex = 0;
+  
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.opacity = i === index ? 1 : 0;
+      });
+    }
+  
+    function moveToSlide(index) {
+      const slideWidth = slides[0].offsetWidth;
+      slideshowContainer.style.transform = `translateX(-${slideWidth * index}px)`;
+      currentIndex = index;
+      showSlide(index);
+    }
+  
+    function showNextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      moveToSlide(currentIndex);
+    }
+  
+    function showPrevSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      moveToSlide(currentIndex);
+    }
+  
+    prevArrow.addEventListener('click', showPrevSlide);
+    nextArrow.addEventListener('click', showNextSlide);
+  
+    // Automatically start the slideshow
+    let interval = setInterval(showNextSlide, 5000); // Change the duration as needed
+  
+    // Pause the slideshow on hover
+    slideshowContainer.addEventListener('mouseover', () => clearInterval(interval));
+    slideshowContainer.addEventListener('mouseleave', () => interval = setInterval(showNextSlide, 20000)); // Change the duration as needed
+  
+    // Show the first slide initially
+    showSlide(currentIndex);
+
+    const fullscreenButton = document.querySelector('.fullscreen-button');
+    const aeroAngles = document.querySelector('.AeroAngles');
+  
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        if (aeroAngles.requestFullscreen) {
+          aeroAngles.requestFullscreen();
+        } else if (aeroAngles.webkitRequestFullscreen) {
+          aeroAngles.webkitRequestFullscreen();
+        } else if (aeroAngles.msRequestFullscreen) {
+          aeroAngles.msRequestFullscreen();
+        }
+        aeroAngles.classList.add('fullscreen'); // Add 'fullscreen' class
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
+        aeroAngles.classList.remove('fullscreen'); // Remove 'fullscreen' class
+      }
+    }
+  
+    fullscreenButton.addEventListener('click', toggleFullscreen);
+    fullscreenButton.addEventListener('click', toggleFullscreen);
+
+;( function( $ ) {
+
+	$( '.swipebox' ).swipebox();
+
+} )( jQuery );
+
   });
+
+
 
 
