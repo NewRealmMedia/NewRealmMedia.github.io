@@ -1,0 +1,161 @@
+.container {  
+    display: grid;
+    grid-template-columns: 1fr 3fr 6fr 1fr 1fr;
+    grid-template-rows: 15vw 30vh 10vh 1500px 10vh 1500px 1500px 10vh 1500px 20vh 1500px;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    position: relative;
+}
+
+body {
+    font-family: Roboto;
+}
+.Title{
+    grid-area: 1 / 3 / 1 / 4;
+    text-align: center;
+    margin-top: 5%;
+    font-size: 5vw; 
+}
+
+.SubTitle{
+    grid-area: 2 / 1 / 2 / 3;
+    text-align: start;
+    font-size: 2vw;
+    Margin-left: 5%;
+}
+
+.PostTitleone{
+    grid-area: 3 / 3 / 4 / 4;
+    text-align: center;
+    font-size: 1.8vw;
+}
+
+.PostContentOne{
+    grid-area: 4 / 3 / 4 / 4;
+    text-align: left;
+    font-size: 1.2vw;
+    padding-top:5%;
+}
+
+.ImagesOne{
+    display: grid;
+    grid-area: 4 / 1 / 5 / 3;
+    align-items: center;
+    justify-content: center;
+}
+
+.Door{
+    height: 500px;
+    max-width: 100%;
+}
+
+.DoorSketch{
+    height: 500px;
+    max-width: 100%;
+}
+
+.DoorSketchTwo{
+    height: 500px;
+    max-width: 100%;
+}
+
+
+
+.PostTitleTwo{
+    grid-area: 5 / 3 / 6 / 4;
+    text-align: center;
+    font-size: 1.8vw;
+}
+
+.PostContentTwo{
+    grid-area: 6 / 3 / 6 / 4;
+    text-align: left;
+    font-size: 1.2vw;
+    padding-top:5%
+}
+
+.ImagesTwo {
+    display: grid;
+    grid-area: 4 / 1 / 5 / 3;
+    align-items: center;
+    justify-content: center;
+}
+
+.Notes {
+    height: 500px;
+    max-width: 100%;
+}
+
+.FirstTest {
+    height: 500px;
+    max-width: 100%;
+}
+
+.PostTitleThree{
+    grid-area: 8 / 3 / 8 / 4;
+    text-align: center;
+    font-size: 1.8vw;
+}
+
+.PostContentThree{
+    grid-area: 9 / 3 / 9 / 4;
+    text-align: left;
+    font-size: 1.2vw;
+    padding-top:5%
+}
+
+.ImagesThree {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.Car{
+    height:500px;
+    max-width:100%;
+}
+
+.PostTitleFour{
+    grid-area: 9 / 3 / 9 / 4;
+    text-align: center;
+    font-size: 1.8vw;
+}
+.PostContentFour{
+    grid-area: 10 / 3 / 10 / 4;
+    text-align: left;
+    font-size: 1.2vw;
+    padding-top:5%
+}
+
+.ImagesFour {
+    display: grid;
+    grid-area: 4 / 1 / 5 / 3;
+    align-items: center;
+    justify-content: center;
+}
+
+.Car{
+    height:500px;
+    max-width:100%;
+}
+
+.Perspective{
+    height:500px;
+    max-width:100%;
+    padding: 50px;
+}
+
+.Saturation{
+    height:400px;
+    max-width:100%;
+    padding: 50px;
+}
+
+.Position{
+    height:500px;
+    max-width:100%;
+    padding: 50px;
+}
